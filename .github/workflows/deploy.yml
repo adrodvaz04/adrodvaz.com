@@ -17,11 +17,20 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+          # Explicitly set the key name (optional but clearer)
+          name: id_rsa
+      
+      - name: Debug - Verify key installed
+        run: |
+          echo "Checking SSH key exists..."
+          ls -la ~/.ssh/
+          echo "Key fingerprint:"
+          ssh-keygen -lf ~/.ssh/id_rsa
       
       - name: Deploy with rsync
         run: |
-          mkdir -p ~/.ssh
-          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          # Test SSH connection first
+          ssh -vvv -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no -o BatchMode=yes ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful'"
           
           # Create target directory
           ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "mkdir -p ${{ secrets.SERVER_HTML_FOLDER }}"
