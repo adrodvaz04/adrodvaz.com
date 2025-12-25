@@ -1,8 +1,243 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrian Rod Vaz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .background-glow {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 56px;
+      font-weight: 700;
+      box-shadow: 0 0 60px rgba(99, 102, 241, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 0%, #c7d2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #a5b4fc;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .bio {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .bio p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e2e8f0;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #6366f1;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 50px;
+    }
+
+    .skill {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      color: #c7d2fe;
+      transition: all 0.3s ease;
+    }
+
+    .skill:hover {
+      background: rgba(99, 102, 241, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+    }
+
+    .link-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .github { background: linear-gradient(135deg, #333, #555); }
+    .linkedin { background: linear-gradient(135deg, #0077b5, #00a0dc); }
+    .email { background: linear-gradient(135deg, #ea4335, #fbbc05); }
+
+    .link-text {
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .tagline { font-size: 1rem; }
+      .container { padding: 40px 20px; }
+    }
+  </style>
+</head>
 <body>
-<p>Hi, Welcome to my website!!  ARod-Vaz ;)bbkjkkj !</p>
+  <div class="background-glow"></div>
   
+  <div class="container">
+    <header>
+      <div class="avatar">AV</div>
+      <h1>Adrian Rod Vaz</h1>
+      <p class="tagline">Developer • Creator • Problem Solver</p>
+    </header>
+
+    <section class="bio">
+      <p>Welcome! I'm Adrian, a passionate developer who loves building things that make a difference. I enjoy turning complex problems into simple, beautiful solutions.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills">
+        <span class="skill">JavaScript</span>
+        <span class="skill">Python</span>
+        <span class="skill">HTML & CSS</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Git</span>
+        <span class="skill">Linux</span>
+        <span class="skill">DevOps</span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Connect</h2>
+      <div class="links">
+        <a href="https://github.com/adrodvaz04" class="link-card" target="_blank">
+          <div class="link-icon github">⌘</div>
+          <span class="link-text">GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/" class="link-card" target="_blank">
+          <div class="link-icon linkedin">in</div>
+          <span class="link-text">LinkedIn</span>
+        </a>
+        <a href="mailto:hello@example.com" class="link-card">
+          <div class="link-icon email">✉</div>
+          <span class="link-text">Email</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Adrian Rod Vaz. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
-  
 </html>
