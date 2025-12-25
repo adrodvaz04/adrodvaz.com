@@ -19,7 +19,7 @@
 | Hostname | linux2 |
 | OS | Rocky Linux 9.7 (Blue Onyx) |
 | Kernel | 5.14.0-611.16.1.el9_7.x86_64 |
-| Internal IP | 10.63.1.29 |
+| Internal IP | 10.x.x.x |
 | Web Server | OpenResty (nginx-based) |
 
 ## Detailed Flow
